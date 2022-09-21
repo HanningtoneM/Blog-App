@@ -3,9 +3,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
     create_table :users do |t|
       t.string :name
       t.string :photo
-      t.text :bio
-      t.integer :post_counter
-      t.string :timestamps
+      t.string :bio
+      t.integer :post_count
 
       t.timestamps
     end
