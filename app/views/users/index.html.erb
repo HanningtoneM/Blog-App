@@ -1,7 +1,4 @@
-<h1 class="post_heading">This is for all users</h1>
-
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render partial: "shared/single_user", locals: { user: user } %>
-  <% end %>
+<input type="hidden" value= "Here is a list of users order by id" />
+<div class = "user_ul">
+ <%= render @users %>
 </div>

@@ -1,13 +1,18 @@
-<h1 class="post_heading">This is for specific user</h1>
+<div class="user_show_container">
+  <div>
+    <%= render @user %>
+  </div>
 
-<div id="userTemplate">
-   <%= render partial: "shared/single_user", locals: { user: @user } %>
-   <div id="bio">
-   <h3>Bio</h3>
-   <p><%= @user.bio %></p>
-   </div>
-<% @posts.each do |post| %>
-     <%= render partial: "shared/single_post", locals: { post: post } %>
-<% end %>
-<%= button_to "See all posts", {controller: "posts", action: "index"}, method:'get'%>
- </div>
+  <div class="bio">
+    <p>Bio</p>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <div class = "post_ul">
+    <%= render @user.three_most_recent_posts %>
+  </div>
+  
+  <%= link_to user_posts_path(@user.id) do %>
+    <%= button_tag 'See all posts', type: 'button' %>
+  <% end %>
+</div>

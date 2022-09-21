@@ -1,11 +1,7 @@
-<h1 class="post_heading">This is all posts of users</h1>
+<div class="posts_index_container">
+  <%= render @user %>
+  <%= render @posts %>
+  <%= button_tag 'Pagination', type: 'button' %>
+</div>
 
-<div id="postTemplate">
-   <%= render partial: "shared/single_user", locals: { user: @user } %>
-<% @posts.each do |post| %>
-     <%= render partial: "shared/single_post", locals: { post: post } %>
-     <%= render partial: "shared/collection_comments", locals: { post: post, user: @user } %>
-<% end %>
-<%= button_to "Paginations"%>
- </div> 
- 
+
