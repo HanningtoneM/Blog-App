@@ -1,4 +1,1 @@
-<input type="hidden" value= "Here is a list of users order by id" />
-<div class = "user_ul">
- <%= render @users %>
-</div>
+<%= render partial: 'partials/user', collection: @users, as: :user %>
