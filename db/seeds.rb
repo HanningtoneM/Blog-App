@@ -5,24 +5,23 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-first_user = User.create(name: 'Tom', photo: 'https://w7.pngwing.com/pngs/563/269/png-transparent-tom-cat-tom-and-jerry-cat-mammal-animals-cat-like-mammal.png', bio: 'Teacher from Mexico.')
-third_user = User.create(name: 'Lilly', photo: 'https://yt3.ggpht.com/ytc/AMLnZu9ywtMiKhRf2B6F7Yfx1nrsZQW1TbknNbJuaYTbJg=s900-c-k-c0x00ffffff-no-rj', bio: 'Teacher from Poland.')
 
-#Create at least 4 posts written by one of the users you created by running the following code:
+# Users
+first_user = User.create(name: 'Tom', photo: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80', bio: 'Teacher from Mexico.', posts_counter: 0)
+second_user = User.create(name: 'Lilly', photo: 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=744&q=80', bio: 'Teacher from Poland.', posts_counter: 0)
+third_user = User.create(name: 'Tim', photo: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80', bio: 'Teacher from Canada.', posts_counter: 0)
 
-first_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my first post')
-second_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my second post')
-third_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my third post')
-fourth_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my fourth post')
+# Posts
+first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
+second_post = Post.create(author: first_user, title: 'Hello again', text: 'This is my second post', comments_counter: 0, likes_counter: 0)
+third_post = Post.create(author: first_user, title: 'Hello again and again', text: 'This is my third post', comments_counter: 0, likes_counter: 0)
+fourth_post = Post.create(author: first_user, title: 'Hello', text: 'This is my fourth post', comments_counter: 0, likes_counter: 0)
 
-#Create at least 6 posts comments for one of the posts you created by running the following code:
+fifth_post = Post.create(author: second_user, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
+sixth_post = Post.create(author: second_user, title: 'Hello again', text: 'This is my second post', comments_counter: 0, likes_counter: 0)
+seventh_post = Post.create(author: second_user, title: 'Hello again and again', text: 'This is my third post', comments_counter: 0, likes_counter: 0)
 
-first_comment = Comment.create(post_id: fourth_post.id, author_id: first_user.id, text: 'Hi Tom!, This is my first comment' )
-Comment.create(post_id: fourth_post.id, author_id: second_user.id, text: 'Hi Tom!, This is my second comment' )
-Comment.create(post_id: fourth_post.id, author_id: first_user.id, text: 'Hi Tom!, This is my third comment' )
-Comment.create(post_id: fourth_post.id, author_id: second_user.id, text: 'Hi Tom!, This is my fourth comment' )
-Comment.create(post_id: fourth_post.id, author_id: first_user.id, text: 'Hi Tom!, This is my fifth comment' )
-Comment.create(post_id: fourth_post.id, author_id: second_user.id, text: 'Hi Tom!, This is my sixth comment' )
+# Comments
+Comment.create(post: first_post, author: third_user, text: 'Hi Tom!' )
 
-first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
+Comment.create(post: fifth_post, author: third_user, text: 'Hi Lilly!' )
