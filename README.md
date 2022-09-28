@@ -1,5 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
+## Blog-app
+a blog website. It shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## Built With
 
