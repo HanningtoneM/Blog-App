@@ -78,3 +78,7 @@ end
 gem 'devise', '~> 4.8'
 
 gem 'cancancan', '~> 3.4'
+
+gem 'jwt', '~> 2.4'
+
+gem 'parser'
